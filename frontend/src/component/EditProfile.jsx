@@ -19,7 +19,7 @@ const EditProfile = () => {
     const fetchUserProfile = async () => {
       try {
         const headers = { Authorization: `Bearer ${token}` };
-        const response = await axios.get("http://localhost:5000/user/profile", { headers });
+        const response = await axios.get("https://cheentaacadmy-assginment-1.onrender.com/user/profile", { headers });
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -46,7 +46,7 @@ const EditProfile = () => {
 
     try {
       const headers = { Authorization: `Bearer ${token}` };
-      await axios.put("http://localhost:5000/user/profile", user, { headers });
+      await axios.put("https://cheentaacadmy-assginment-1.onrender.com/user/profile", user, { headers });
       setSuccess("Profile updated successfully!");
       setTimeout(() => {
         navigate("/profile");

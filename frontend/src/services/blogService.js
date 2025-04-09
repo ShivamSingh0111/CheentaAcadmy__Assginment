@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/blog";
+const API_URL = "https://cheentaacadmy-assginment-1.onrender.com/blog";
 
 export const fetchBlogs = async () => {
   const token = localStorage.getItem("token");

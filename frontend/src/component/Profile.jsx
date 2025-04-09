@@ -15,10 +15,10 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const headers = { Authorization: `Bearer ${token}` };
-        const userResponse = await axios.get("http://localhost:5000/user/profile", { headers });
+        const userResponse = await axios.get("https://cheentaacadmy-assginment-1.onrender.com/user/profile", { headers });
         setUser(userResponse.data);
 
-        const blogsResponse = await axios.get(`http://localhost:5000/blog/user/${userResponse.data._id}`, { headers });
+        const blogsResponse = await axios.get(`https://cheentaacadmy-assginment-1.onrender.com/blog/user/${userResponse.data._id}`, { headers });
         setBlogs(blogsResponse.data);
       } catch (error) {
         console.error("Error fetching profile:", error);

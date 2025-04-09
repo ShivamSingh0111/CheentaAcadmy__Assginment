@@ -17,13 +17,13 @@ const Comments = () => {
       try {
         const headers = { Authorization: `Bearer ${token}` };
 
-        const blogResponse = await axios.get(`http://localhost:5000/blog/${blogId}`, { headers });
+        const blogResponse = await axios.get(`https://cheentaacadmy-assginment-1.onrender.com/blog/${blogId}`, { headers });
         setBlog(blogResponse.data);
 
-        const commentsResponse = await axios.get(`http://localhost:5000/blog/${blogId}/comments`, { headers });
+        const commentsResponse = await axios.get(`https://cheentaacadmy-assginment-1.onrender.com/blog/${blogId}/comments`, { headers });
         setComments(commentsResponse.data);
 
-        const userResponse = await axios.get(`http://localhost:5000/user/profile`, { headers });
+        const userResponse = await axios.get(`https://cheentaacadmy-assginment-1.onrender.com/user/profile`, { headers });
         setCurrentUser(userResponse.data);
       } catch (error) {
         console.error("Failed to fetch blog or comments", error);
@@ -38,9 +38,9 @@ const Comments = () => {
     try {
       const headers = { Authorization: `Bearer ${token}` };
 
-      await axios.post(`http://localhost:5000/blog/${blogId}/comment`, { text: newComment }, { headers });
+      await axios.post(`https://cheentaacadmy-assginment-1.onrender.com/blog/${blogId}/comment`, { text: newComment }, { headers });
 
-      const updatedComments = await axios.get(`http://localhost:5000/blog/${blogId}/comments`, { headers });
+      const updatedComments = await axios.get(`https://cheentaacadmy-assginment-1.onrender.com/blog/${blogId}/comments`, { headers });
       setComments(updatedComments.data);
 
       setNewComment("");
@@ -58,7 +58,7 @@ const handleDeleteComment = async (commentId) => {
     const headers = { Authorization: `Bearer ${token}` };
     
     // Log the exact URL being called
-    const deleteUrl = `http://localhost:5000/blog/${blogId}/comment/${commentId}`;
+    const deleteUrl = `https://cheentaacadmy-assginment-1.onrender.com/blog/${blogId}/comment/${commentId}`;
     console.log(`DELETE request to: ${deleteUrl}`);
     
     // Add specific error handling to see the full error response

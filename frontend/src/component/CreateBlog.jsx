@@ -24,7 +24,7 @@ const CreateBlog = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/blog",
+        "https://cheentaacadmy-assginment-1.onrender.com/blog",
         { title, content },
         { headers: { Authorization: `Bearer ${token}` } }
       );
