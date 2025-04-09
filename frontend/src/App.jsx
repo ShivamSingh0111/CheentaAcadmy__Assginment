@@ -6,6 +6,7 @@ import CreateBlog from "./component/CreateBlog";
 import Comments from "./component/Comments";
 import Profile from "./component/Profile";
 import EditProfile from "./component/EditProfile";
+import SingleArticle from "./component/SingleArticle";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/create" element={<CreateBlog/>} />
+        <Route path="/article/:blogId" element={<SingleArticle />} />
         <Route path="/comments/:blogId" element={<Comments />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/edit-profile" element={<EditProfile />} />

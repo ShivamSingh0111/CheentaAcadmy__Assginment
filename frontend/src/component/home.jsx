@@ -61,7 +61,8 @@ const Home = () => {
           {blogs.map((blog) => (
             <div 
               key={blog._id} 
-              className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg"
+              className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => navigate(`/article/${blog._id}`)}
             >
               <div className="p-6">
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{blog.title}</h2>
@@ -74,17 +75,35 @@ const Home = () => {
                 
                 <div className="flex justify-between items-center mt-4">
                   <button 
-                    onClick={() => handleLike(blog._id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLike(blog._id);
+                    }}
                     className="flex items-center text-gray-700 hover:text-blue-600 transition duration-200"
                   >
                     <span className="mr-1">👍</span> {blog.likes || 0}
                   </button>
                   
                   <button 
-                    onClick={() => navigate(`/comments/${blog._id}`)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/article/${blog._id}`);
+                    }}
                     className="flex items-center text-gray-700 hover:text-blue-600 transition duration-200"
                   >
                     <span className="mr-1">💬</span> Comment
+                  </button>
+                </div>
+                
+                <div className="mt-4 text-center">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/article/${blog._id}`);
+                    }}
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    Read More →
                   </button>
                 </div>
               </div>
