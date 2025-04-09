@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-md px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="logo">
-          <Link to="/" className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition duration-200">
+          <Link to="/home" className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition duration-200">
             BlogTime
           </Link>
         </div>
