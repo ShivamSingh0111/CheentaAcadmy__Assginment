@@ -12,6 +12,9 @@ require("dotenv").config
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.get('/',(req, res)=>{
+  res.json('Now API is Activated!')
+})
 
 const signupRouter = require("./src/routes/signup");
 const loginRouter = require("./src/routes/login");
@@ -31,5 +34,5 @@ app.get("/",(req,res)=>{
 })
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port http://localhost:${PORT}`);
 });
